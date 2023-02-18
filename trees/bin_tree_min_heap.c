@@ -112,7 +112,7 @@ tree postorder(tree *root) {
 
 int main() {
 	FILE *fp;
-	fp = fopen("../input.txt", "r");
+	fp = fopen("input.txt", "r");
 	if (fp == NULL) {
 		printf("\nError in opening input.txt\n");
 		exit(0);
