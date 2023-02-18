@@ -53,30 +53,24 @@ tree postorder(tree *root) {
 	}
 }	
 
-
-
 int main() {
-	int op, dat;
-	tree *root = NULL;
-	while(1) {
-		printf("\nSelect an option : \n[1] Insert to binary tree \n[2] Display Pre-order \n[3] Display Post-order \n[4] Display In-order \n[5] Exit \nEnter your option : ");
-		scanf("%d", &op);
-
-		if(op == 1) {
-			printf("\nEnter your data : ");
-			scanf("%d", &dat);
-			root = insert(root, dat);
-		}
-		else if(op == 2) 
-			preorder(root);
-		else if(op == 3)
-			postorder(root);
-		else if(op == 4) 
-			inorder(root);
-		else if(op == 5) 
-			exit(0);
-		else 
-			printf("Invaid Input... Try again!");
+	FILE *fp;
+	fp = fopen("input.txt", "r");
+	if (fp == NULL) {
+		printf("\nError in opening input.txt\n");
+		exit(0);
 	}
+	tree *root = NULL;
+	int op, dat;
+	while(fscanf(fp, "%d", &dat) != EOF) {
+		root = insert(root, dat);
+	}
+	printf("Pre-order  : ");
+	preorder(root);
+	printf("\nPost-order : ");
+	postorder(root);
+	printf("\nIn-order   : ");
+	inorder(root);
+	printf("\n");
 	return 0;
 }
