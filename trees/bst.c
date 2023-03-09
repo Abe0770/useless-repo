@@ -60,9 +60,9 @@ int main() {
 	}
 	tree *root = NULL;
 	int op, dat;
-	while(fscanf(fp, "%d", &dat) != EOF) {
+	while(fscanf(fp, "%d", &dat) != EOF) 
 		root = insert(root, dat);
-	}
+	
 	printf("Pre-order  : ");
 	preorder(root);
 	printf("\nPost-order : ");
