@@ -15,7 +15,7 @@ typedef struct tree {
 tree *create(int dat) {
 	tree *rootp = (tree *) malloc (sizeof(tree));
 	rootp -> data = dat;
-	rootp -> left = 	rootp -> right = NULL;
+	rootp -> left = rootp -> right = NULL;
 	return rootp;
 }
 
