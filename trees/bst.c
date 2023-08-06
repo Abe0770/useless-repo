@@ -22,8 +22,8 @@ tree *create(int dat) {
 tree *insert(tree *root, int dat) {
 	if(root == NULL)
 		return create(dat); else if(dat > root -> data)
-		root -> right = insert(root -> right, dat); else if(dat < root -> data)
-		root -> left = insert(root -> left, dat);
+	root -> right = insert(root -> right, dat); else if(dat < root -> data)
+	root -> left = insert(root -> left, dat);
 	return root;
 }
 
